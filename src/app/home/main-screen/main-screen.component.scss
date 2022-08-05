@@ -1,0 +1,59 @@
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 20vh;
+}
+
+.postite {
+  height: 50vh;
+  width: 100vw;
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  
+  & > app-postite {
+    position: absolute;
+    height: 100%;
+    width: 200px;
+    bottom: 0;
+  } 
+  
+  & > :nth-child(1) {
+    transform: rotate(320deg);
+    transform-origin: bottom;
+  }
+
+  & > :nth-child(2) {
+    transform: rotate(330deg);
+    transform-origin: bottom;
+  }
+
+  & > :nth-child(3) {
+    transform: rotate(340deg);
+    transform-origin: bottom;
+  }
+
+  & > :nth-child(4) {
+    transform: rotate(350deg);
+    transform-origin: bottom;
+  }
+
+  & > :nth-child(5) {
+    transform: rotate(0deg);
+    transform-origin: bottom;
+  }
+
+  & > :nth-child(6) {
+    transform: rotate(20deg);
+    transform-origin: bottom;
+  }
+}

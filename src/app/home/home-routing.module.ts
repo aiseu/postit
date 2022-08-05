@@ -1,11 +1,34 @@
-import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomePage } from './home.page';
+import { NgModule } from '@angular/core';
+
+import { ProfileComponent } from './profile/profile.component';
+import { FeedComponent } from '../home/feed/feed.component';
+import { MainScreenComponent } from './main-screen/main-screen.component';
+import { HomeComponent } from './home.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomePage,
+    component: HomeComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: 'main',
+        pathMatch: 'full'
+      },
+      {
+        path: 'main',
+        component: MainScreenComponent
+      },
+      {
+        path: 'feed',
+        component: FeedComponent
+      },
+      {
+        path: 'profile',
+        component: ProfileComponent
+      }
+    ]
   }
 ];
 
@@ -13,4 +36,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class HomePageRoutingModule {}
+export class HomeRoutingModule {}

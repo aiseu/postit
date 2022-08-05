@@ -1,12 +1,12 @@
+import { NavbarModule } from './../components/navbar/navbar.module';
+import { HomeRoutingModule } from './home-routing.module';
+import { MainScreenModule } from './main-screen/main-screen.module';
+import { FormsModule } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
-import { FormsModule } from '@angular/forms';
 
-import { HomePage } from './home.page';
-import { LoginFieldsComponent } from './login-fields/login-fields.component';
-
-import { HomePageRoutingModule } from './home-routing.module';
+import { HomeComponent } from './home.component';
 
 
 @NgModule({
@@ -14,11 +14,12 @@ import { HomePageRoutingModule } from './home-routing.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    MainScreenModule,
+    HomeRoutingModule,
+    NavbarModule
   ],
   declarations: [
-    HomePage,
-    LoginFieldsComponent
+   HomeComponent,
   ]
 })
-export class HomePageModule {}
+export class HomeModule { }

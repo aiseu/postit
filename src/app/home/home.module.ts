@@ -16,7 +16,7 @@ import { HomeComponent } from './home.component';
     IonicModule,
     MainScreenModule,
     HomeRoutingModule,
-    NavbarModule
+    NavbarModule,
   ],
   declarations: [
    HomeComponent,

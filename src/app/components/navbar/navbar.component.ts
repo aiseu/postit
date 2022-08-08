@@ -1,5 +1,5 @@
 import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, Renderer2, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -23,4 +23,5 @@ export class NavbarComponent implements OnInit {
   goToProfile() {
     this.route.navigate(['home/profile']);
   }
+
 }

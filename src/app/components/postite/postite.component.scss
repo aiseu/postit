@@ -11,25 +11,3 @@ ion-card-header {
   display: flex;
   justify-content: center;
 }
-
-.button {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 10px;
-
-  & > button {
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    width: 50%;
-    border: none;
-  
-    font-size: 10px;
-    font-style: italic;
-    font-weight: 500;
-    color: rgb(122,122,122);
-    background-color: #fff;
-    display: none;
-  }
-}

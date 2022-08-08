@@ -1,0 +1,17 @@
+ion-card {
+  margin: 0;
+  height: 201px;
+  width: 175px;
+}
+
+ion-card-title {
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+}
+
+ion-card-content {
+  display: flex;
+  justify-content: center;
+  font-size: 10px;
+}

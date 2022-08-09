@@ -1,3 +1,38 @@
-  <div class="box">
-    <p>oiii</p>
-  </div>
+<div class="box" [style.background-color]="data.color">
+  <header>
+    <div class="upside">
+      <div class="user-img">
+        <img [src]="data.user.imageUrl" alt="">
+      </div>
+      <div class="user-info">
+        <h2> {{ data.user.name }} </h2>
+        <h3> {{ data.user.role }} </h3>
+      </div>
+      <div class="button">
+        <button>Ler Mais+</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="title">
+      <h1> {{ data.title }} </h1>
+    </div>
+    <div class="content">
+      {{ data.annotation }}
+    </div>
+  </main>
+
+  <footer>
+    <div class="comment-input">
+      <form action="" class="input-form">
+        <input type="text" placeholder="Inserir comentario">
+        <button>Publicar</button>
+      </form>
+    </div>
+    <div class="icons">
+      <ion-icon name="chatbubble-outline"></ion-icon>
+      <ion-icon name="heart-outline"></ion-icon>
+    </div>
+  </footer>
+</div>

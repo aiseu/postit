@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { NoteProxy } from './../../models/proxy/note.proxy';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-postite-on-feed',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostiteOnFeedComponent implements OnInit {
 
-  constructor() { }
+  @Input() data: NoteProxy;
+
+  constructor() { console.log(this.data);}
 
   ngOnInit() {}
 

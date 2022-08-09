@@ -1,3 +1,4 @@
+import { FeedModule } from './feed/feed.module';
 import { NavbarModule } from './../components/navbar/navbar.module';
 import { HomeRoutingModule } from './home-routing.module';
 import { MainScreenModule } from './main-screen/main-screen.module';
@@ -13,6 +14,7 @@ import { HomeComponent } from './home.component';
   imports: [
     CommonModule,
     FormsModule,
+    FeedModule,
     IonicModule,
     MainScreenModule,
     HomeRoutingModule,

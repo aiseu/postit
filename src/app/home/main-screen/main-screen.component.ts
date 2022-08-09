@@ -34,7 +34,7 @@ export class MainScreenComponent implements OnInit {
         name: 'João',
         password: '123'
       },
-      color: '#00BFFF',
+      color: '#a2c8e8',
       isPublic: false
     },
     {
@@ -62,7 +62,7 @@ export class MainScreenComponent implements OnInit {
         name: 'João',
         password: '123'
       },
-      color: '#f77d60',
+      color: '#feb196',
       isPublic: false
     }
   ];

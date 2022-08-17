@@ -1,0 +1,40 @@
+<div class="box" [style.background-color]="dataComment.color">
+  <header class="space"></header>
+  <main>
+    <header>
+      <div class="upside">
+        <div class="user-img">
+          <img src="assets/icon/schwi.jpg" alt="">
+        </div>
+        <div class="user-info">
+          <h2> {{ dataComment.user.name }} </h2>
+          <h3> {{ dataComment.user.role }} </h3>
+        </div>
+      </div>
+    </header>
+    <div class="title">
+      <h1> {{ dataComment.title }} </h1>
+    </div>
+    <div class="content">
+      <p>
+        {{ dataComment.annotation }}
+      </p>
+      <ng-container *ngFor="let comment of dataComment.comments">
+        <app-comment-in-postite [userDataCommented]="comment"></app-comment-in-postite>
+      </ng-container>
+    </div>
+  </main>
+
+  <footer>
+    <div class="comment-input">
+      <form action="" class="input-form">
+        <input type="text" placeholder="Inserir comentario">
+        <button>Publicar</button>
+      </form>
+    </div>
+    <div class="icons">
+      <ion-icon name="heart-outline"></ion-icon>
+    </div>
+  </footer>
+
+</div>

@@ -4,5 +4,4 @@ export interface NoteCommentProxy {
   id: number;
   comment: string;
   user: UserProxy;
-  note: NoteProxy;
 }

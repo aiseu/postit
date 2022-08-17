@@ -1,5 +1,6 @@
-import { Router } from '@angular/router';
-import { Component, ElementRef, HostListener, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { filter } from 'rxjs/operators'
 
 @Component({
   selector: 'app-navbar',
@@ -8,7 +9,15 @@ import { Component, ElementRef, HostListener, OnInit, Renderer2, ViewChild } fro
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private route: Router) { }
+  url: string;
+
+  constructor(private route: Router) { 
+    route.events.pipe(filter(event => event instanceof NavigationEnd))
+    .subscribe((route: NavigationEnd) => {
+      const splittedUrl = route.url.split('/');
+      this.url = splittedUrl[splittedUrl.length -1];
+    })
+  }
 
   ngOnInit() {}
 
@@ -17,7 +26,7 @@ export class NavbarComponent implements OnInit {
   }
 
   goToHome() {
-    this.route.navigate(['home']);
+    this.route.navigate(['home/main']);
   }
 
   goToProfile() {

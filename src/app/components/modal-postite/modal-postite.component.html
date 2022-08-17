@@ -1,0 +1,11 @@
+<main [style.background-color]="data.color">
+  <div class="header">
+    <input type="text" placeholder="Título da Nota" maxlength="18" [(ngModel)]="data.title">
+  </div>
+  <div class="main">
+    <textarea name="" id="" cols="40" rows="10" maxlength="504" placeholder="Inserir anotações aqui..." [(ngModel)]="data.annotation"></textarea>
+  </div>
+  <div class="footer">
+    <button (click)="closeModal()">Colar no mural</button>
+  </div>
+</main>

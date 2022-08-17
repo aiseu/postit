@@ -11,10 +11,7 @@
 </main>
 
 <footer class="footer">
-  <app-postite></app-postite>
-  <app-postite></app-postite>
-  <app-postite></app-postite>
-  <app-postite></app-postite>
-  <app-postite></app-postite>
-  <app-postite></app-postite>
+  <ng-container *ngFor="let color of postiteButtons">
+    <app-postite [color]="color" (dataModalPostite)="generatePostite($event)"></app-postite>
+  </ng-container>
 </footer>

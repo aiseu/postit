@@ -1,7 +1,7 @@
 <div class="container">
   <div class="content">
-    <button ><ion-icon name="book-outline" (click)="goToFeed()"></ion-icon></button>
-    <button><ion-icon name="home-outline" (click)="goToHome()"></ion-icon></button>
-    <button><ion-icon name="person-outline" (click)="goToProfile()"></ion-icon></button>
+    <button ><ion-icon [name]="url === 'feed' ? 'book' : 'book-outline'" (click)="goToFeed()"></ion-icon></button>
+    <button><ion-icon [name]="url === 'main' ? 'home' : 'home-outline'" (click)="goToHome()"></ion-icon></button>
+    <button><ion-icon [name]="url === 'profile' ? 'person' : 'person-outline'" (click)="goToProfile()"></ion-icon></button>
   </div>
 </div>

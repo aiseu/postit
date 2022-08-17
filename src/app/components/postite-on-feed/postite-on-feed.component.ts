@@ -1,4 +1,5 @@
-import { NoteProxy } from './../../models/proxy/note.proxy';
+import { NoteCommentProxy } from './../../models/proxy/note-comment.proxy';
+import { Router } from '@angular/router';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -8,10 +9,13 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class PostiteOnFeedComponent implements OnInit {
 
-  @Input() data: NoteProxy;
+  @Input() data: NoteCommentProxy;
 
-  constructor() { console.log(this.data);}
+  constructor(private route: Router) {}
 
   ngOnInit() {}
 
+  goToComment(){
+    this.route.navigate([`home/comment/${this.data.id}`]);
+  }
 }

@@ -1,111 +1,106 @@
 * {
   font-size: 1em;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  
+
 }
 
 .box {
   width: 90vw;
-  height: 40vh;
+  height: 70vh;
   margin-bottom: 3em;
+  background-color: #d7df6b;
 }
 
-header {
+.space{
   width: 100%;
-  height: 20%;
+  height: 1%;
+  background-color: inherit;
+}
 
-  .upside {
+main {
+  width: 100%;
+  height: 84%;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  header {
     width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-
-    .user-img {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      width: 20%;
+    height: 20%;
+  
+    .upside {
+      width: 100%;
       height: 100%;
-
+      display: flex;
+      align-items: center;
+  
+      .user-img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20%;
+        height: 100%;
+  
         img {
           width: 40px;
           height: 40px;
           border-radius: 50%;
         }
-    }
-
-    .user-info {
-      width: 50%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      flex-direction: column;
-      margin-left: 15px;
-
+      }
+  
+      .user-info {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+  
         h2 {
           margin: 0;
           padding: 0;
           color: #595a50;
           font-style: italic;
         }
-
+  
         h3 {
           margin: 0;
           padding: 0;
           color: #858763;
           font-size: 10px;
         }
-
-    }
-
-    .button {
-      width: 50%;
-      height: 100%;
-      padding-right: 10px;
-      display: flex;
-      justify-content: flex-end;
-
-        button {
-          font-size: 12px;
-          font-weight: 700;
-          color: #54544f;
-          background-color: inherit;
-        }
+      }
     }
   }
-}
-
-main {
-  width: 100%;
-  height: 60%;
 
   .title {
     width: 100%;
-    height: 10%;
+    height: 5%;
     margin-left: 20px;
     margin-bottom: 20px;
 
     h1 {
       margin: 0;
-      color: #54544f;
       font-size: 18px;
+      color: #54544f;
     }
   }
 
   .content {
-    height: 80%;
+    height: 100%;
     width: 100%;
     padding: 0 20px;
     margin: 0;
-    overflow: hidden;
     color: #50504e;
+
+    p {
+      margin: 0 0 40px;
+    }
   }
 }
 
 footer {
   width: 100%;
-  height: 20%;
+  height: 15%;
   display: flex;
   justify-content: space-around;
 
@@ -120,7 +115,7 @@ footer {
       justify-content: space-around;
       margin-left: 20px;
       width: 100%;
-      height: 40%;
+      height: 30%;
       border: solid 1px #57574f;
       border-radius: 10px;
 
@@ -136,7 +131,7 @@ footer {
       outline: none;
       font-size: 13px;
     }
-    
+
     button {
       height: 100%;
       font-size: 13px;

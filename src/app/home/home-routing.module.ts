@@ -1,3 +1,4 @@
+import { CommentComponent } from './comment/comment.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 
@@ -27,6 +28,10 @@ const routes: Routes = [
       {
         path: 'profile',
         component: ProfileComponent
+      },
+      {
+        path: 'comment/:id',
+        component: CommentComponent
       }
     ]
   }

@@ -1,3 +1,4 @@
+import { CommentModule } from './comment/comment.module';
 import { FeedModule } from './feed/feed.module';
 import { NavbarModule } from './../components/navbar/navbar.module';
 import { HomeRoutingModule } from './home-routing.module';
@@ -18,6 +19,7 @@ import { HomeComponent } from './home.component';
     IonicModule,
     MainScreenModule,
     HomeRoutingModule,
+    CommentModule,
     NavbarModule,
   ],
   declarations: [

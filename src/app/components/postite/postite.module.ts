@@ -1,3 +1,4 @@
+import { ModalPostiteModule } from './../modal-postite/modal-postite.module';
 import { PostiteComponent } from './postite.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -9,7 +10,8 @@ import { CommonModule } from '@angular/common';
     PostiteComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ModalPostiteModule
   ],
   exports: [
     PostiteComponent

@@ -2,7 +2,7 @@
   <header>
     <div class="upside">
       <div class="user-img">
-        <img [src]="data.user.imageUrl" alt="">
+        <img [src]="data.user.imageUrl" alt="" onerror="this.src='../../../assets/icon/schwi.jpg';">
       </div>
       <div class="user-info">
         <h2> {{ data.user.name }} </h2>
@@ -31,8 +31,18 @@
       </form>
     </div>
     <div class="icons">
-      <ion-icon name="chatbubble-outline"></ion-icon>
-      <ion-icon name="heart-outline"></ion-icon>
+      <div class="chat">
+        <ion-icon name="chatbubble-outline" (click)="goToComment()"></ion-icon>
+      </div>
+      <div class="heart" *ngIf="!like; else liked" (click)="enjoy()">
+        <ion-icon name="heart-outline"></ion-icon>
+      </div>
     </div>
   </footer>
 </div>
+
+<ng-template #liked>
+  <div class="heart" (click)="enjoy()">
+    <ion-icon name="heart" color="danger"></ion-icon>
+  </div>
+</ng-template>

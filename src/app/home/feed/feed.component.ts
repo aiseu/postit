@@ -1,5 +1,6 @@
+import { AlertController } from '@ionic/angular';
+import { NoteService } from './../../services/note.service';
 import { NoteProxy } from './../../models/proxy/note.proxy';
-import { SendDataService } from './../../models/proxy/send-data.service';
 
 import { Component, OnInit } from '@angular/core';
 
@@ -12,10 +13,29 @@ export class FeedComponent implements OnInit {
 
   notePostite: NoteProxy[] = [];
 
-  constructor(private data: SendDataService) {
-      this.notePostite = data.getData();
+  constructor(private noteService: NoteService, private alertController: AlertController) {
    }
 
-  ngOnInit() {}
+   async getPostitePublics(){
+    const {success, error} = await this.noteService.getPublicNote()
+    if(success) {
+      this.notePostite = success
+    } else {
+      await this.presentAlert()
+    }
+   }
 
+   async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Erro',
+      message: 'Não foi possivel gerar os postite tente novamente',
+      buttons: ['OK'],
+    });
+
+    await alert.present();
+  }  
+
+ async ngOnInit() {
+  await this.getPostitePublics()
+ }
 }

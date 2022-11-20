@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { LoginPayload } from './../../models/payload/login.payload';
+import { UserService } from './../../services/user.service';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,11 +11,39 @@ import { Router } from '@angular/router';
 })
 export class LoginFieldsComponent implements OnInit {
 
-  constructor(private route: Router) { }
+  @Output() openRegistration = new EventEmitter<boolean>();
+
+  formGroup: FormGroup;
+  value:boolean;
+
+  constructor(private route: Router, private formBuilder: FormBuilder, private userService: UserService) { 
+    this.formGroup = formBuilder.group({
+      username: ['', Validators.compose([
+        Validators.required,
+        Validators.email
+      ])],
+      password: ['', Validators.compose([
+        Validators.required,
+        Validators.minLength(6)
+      ])]
+    })
+  }
 
   ngOnInit() {}
 
-  goToHome(){
-    this.route.navigate(['home']);
+  async login(){
+    const payload = this.formGroup.getRawValue() as LoginPayload
+    const logged = await this.userService.login(payload);
+     if(logged){
+       this.formGroup.reset()
+       this.value = logged
+       return void this.route.navigate(['home/main']);
+     } else {
+       this.value = logged
+     }
+  }
+
+  goToRegistration(){
+    this.openRegistration.emit(true)
   }
 }

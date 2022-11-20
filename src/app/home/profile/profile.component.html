@@ -1,3 +1,21 @@
-<p>
-  profile works!
-</p>
+<div class="container">
+  <img src="../../../assets/img/grid.svg" alt="">
+  <main>
+    <div class="profile-picture">
+      <img [src]="dataLocal.imageUrl" alt="" onerror="this.src='../../../assets/icon/schwi.jpg';">
+    </div>
+    <button class="buttonMenu" (click)="openMenu()"><img src="../../../assets/img/kebabButton.svg" alt=""></button>
+    <div class="information-user">
+      <h2> {{ dataLocal.name }} </h2>
+      <h3> {{ dataLocal.role }} </h3>
+    </div>
+    <div class="title">
+      <h1> NOTAS PÚBLICAS </h1>
+    </div>
+    <div class="content">
+      <ng-container *ngFor="let publicNote of notePostitePublicuser">
+        <app-postite-on-profile class="card" [data]="publicNote"></app-postite-on-profile>
+      </ng-container>
+      </div>
+  </main>
+</div>

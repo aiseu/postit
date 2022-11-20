@@ -1,9 +1,22 @@
-<main [style.background-color]="data.color">
+<main [style.background-color]="color">
   <div class="header">
-    <input type="text" placeholder="Título da Nota" maxlength="18" [(ngModel)]="data.title">
+    <input type="text" placeholder="Título da Nota" maxlength="20" [(ngModel)]="data.title" [readonly]="readonly">
+
+    <button id="popover-button"><img src="../../../assets/img/kebab-icon.png" alt="" *ngIf="isUpdate"></button>
+    <ion-popover trigger="popover-button" [dismissOnSelect]="true" side="left">
+      <ion-content>
+        <ion-list lines="none">
+          <ion-item [button]="true" [detail]="false" (click)="edit()">Editar</ion-item>
+          <ion-item [button]="true" [detail]="false" (click)="publicFeed()">Publicar no Feed</ion-item>
+          <ion-item [button]="true" [detail]="false" (click)="delete()">Excluir Nota</ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-popover>
+
   </div>
   <div class="main">
-    <textarea name="" id="" cols="40" rows="10" maxlength="504" placeholder="Inserir anotações aqui..." [(ngModel)]="data.annotation"></textarea>
+    <textarea name="" id="" cols="40" rows="10" maxlength="504" placeholder="Inserir anotações aqui..."
+      [(ngModel)]="data.annotation" [readonly]="readonly"></textarea>
   </div>
   <div class="footer">
     <button (click)="closeModal()">Colar no mural</button>

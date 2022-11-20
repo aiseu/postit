@@ -9,13 +9,12 @@ import { filter } from 'rxjs/operators'
 })
 export class NavbarComponent implements OnInit {
 
-  url: string;
+  url: string = '';
 
   constructor(private route: Router) { 
     route.events.pipe(filter(event => event instanceof NavigationEnd))
     .subscribe((route: NavigationEnd) => {
-      const splittedUrl = route.url.split('/');
-      this.url = splittedUrl[splittedUrl.length -1];
+      this.url = route.url
     })
   }
 
@@ -32,5 +31,4 @@ export class NavbarComponent implements OnInit {
   goToProfile() {
     this.route.navigate(['home/profile']);
   }
-
 }

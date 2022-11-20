@@ -1,6 +1,6 @@
 <div class="content">
   <div class="img-comment">
-    <img src="assets/icon/schwi.jpg" alt="">
+    <img [src]="userDataCommented.user.imageUrl" alt="" onerror="this.src='../../../assets/icon/schwi.jpg';">
   </div>
   <div class="user-comment">
     <h2> {{ userDataCommented.user.name }}</h2>

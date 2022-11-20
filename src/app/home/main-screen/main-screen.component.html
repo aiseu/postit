@@ -1,17 +1,17 @@
-<header class="logo">
-  <img src="../../../assets/icon/LOGO.png" alt="Logo NoteIt">
-</header>
-
-<main>
-  <div class="content">
-      <ng-container *ngFor="let postite of notePostite">
-          <app-postite-on-screen class="card" [data]="postite"></app-postite-on-screen>
+<div class="box">
+  <header class="logo">
+    <img src="../../../assets/icon/LOGO.png" alt="Logo NoteIt">
+  </header>
+  <main>
+    <div class="content">
+      <ng-container *ngFor="let postite of notePostite, let i = index">
+        <app-postite-on-screen class="card" [data]="postite" [index]="i" (refresh)="getPostite()"></app-postite-on-screen>
       </ng-container>
-  </div>
-</main>
-
-<footer class="footer">
-  <ng-container *ngFor="let color of postiteButtons">
-    <app-postite [color]="color" (dataModalPostite)="generatePostite($event)"></app-postite>
-  </ng-container>
-</footer>
+    </div>
+  </main>
+  <footer class="footer">
+    <ng-container *ngFor="let color of postiteButtons">
+      <app-postite [color]="color" (dataModalPostite)="generatePostite($event)"></app-postite>
+    </ng-container>
+  </footer>
+</div>

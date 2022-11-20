@@ -1,10 +1,10 @@
-<div class="box" [style.background-color]="dataComment.color">
+<div class="box" [style.background-color]="dataComment.color" *ngIf="dataComment">
   <header class="space"></header>
   <main>
     <header>
       <div class="upside">
         <div class="user-img">
-          <img src="assets/icon/schwi.jpg" alt="">
+          <img [src]="dataComment.user.imageUrl" alt="" onerror="this.src='../../../assets/icon/schwi.jpg';">
         </div>
         <div class="user-info">
           <h2> {{ dataComment.user.name }} </h2>
@@ -24,17 +24,20 @@
       </ng-container>
     </div>
   </main>
-
   <footer>
     <div class="comment-input">
-      <form action="" class="input-form">
-        <input type="text" placeholder="Inserir comentario">
-        <button>Publicar</button>
-      </form>
+      <div class="input-form">
+        <input type="text" placeholder="Inserir comentario" [(ngModel)]="data.comment">
+        <button (click)="publish()" (click)="clear()">Publicar</button>
+      </div>
     </div>
-    <div class="icons">
+    <div class="icons" *ngIf="!like; else liked" (click)="enjoy()">
       <ion-icon name="heart-outline"></ion-icon>
     </div>
   </footer>
-
 </div>
+<ng-template #liked>
+  <div class="icons" (click)="enjoy()">
+    <ion-icon name="heart" color="danger"></ion-icon>
+  </div>
+</ng-template>

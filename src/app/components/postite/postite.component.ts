@@ -24,12 +24,10 @@ export class PostiteComponent implements OnInit {
     modal.present();
     
     modal.onDidDismiss().then((value:any) =>{
-      console.log(value)
-      this.dataModalPostite.emit(value) 
+      if(!value.data) return;
+      this.dataModalPostite.emit(value.data.success)
     })
   }
 
-
   ngOnInit() {}
-
 }

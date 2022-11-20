@@ -1,15 +1,20 @@
-    <form action="">
-      <div class="logo">
-        <img src="../../../assets/icon/LOGO.png" alt="">
-      </div>
-      <div class="input-email">
-        <label for="email">E-mail</label>
-        <input type="text" id="email">
-      </div>
-      <div class="input-password">
-        <label for="password">Senha</label>
-        <input type="password" id="password">
-      </div>
-      <button (click)="goToHome()">Confirmar</button>
-      <p>Não possui conta?<a href=""> Cadastre-se</a></p>
-    </form>
+<form (ngSubmit)="login()" [formGroup]="formGroup">
+  <div class="logo">
+    <img src="../../../assets/icon/LOGO.png" alt="">
+  </div>
+  <div class="input-email">
+    <label for="email">E-mail</label>
+    <input type="text" id="email" formControlName="username" [ngStyle]="{'border-color': value === false ? 'red' : '#e6e6e6'}">
+  </div>
+  <div class="input-password">
+    <label for="password">Senha</label>
+    <input type="password" id="password" formControlName="password" [ngStyle]="{'border-color': value === false ? 'red' : '#e6e6e6'}">
+  </div>
+  <ng-container *ngIf="value === false">
+    <div class="erro">
+      <span>*Tem algo errado :(</span>
+    </div>
+  </ng-container>
+  <button type="submit" [disabled]="formGroup.invalid" [ngStyle]="{'opacity': formGroup.invalid === true ? '0.5' : '1'}">Confirmar</button>
+  <p>Não possui conta?<a (click)="goToRegistration()"> Cadastre-se</a></p>
+</form>

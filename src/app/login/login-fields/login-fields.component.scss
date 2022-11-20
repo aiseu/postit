@@ -43,6 +43,19 @@ input{
   border-radius: 20px;
   border: solid 2px;
   border-color: rgb(230,230,230);
+  outline: none;
+}
+
+.erro + button{
+  margin-top: 19px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+span {
+  margin: 0;
+  color: red;
 }
 
 button {
@@ -63,4 +76,9 @@ a {
   text-decoration: none;
   color: #2D9FDB;
   font-size: 14px;
+}
+
+@media (max-width: 375px) {
+ button {margin-top: 18px;} 
+ input {height: 48px;}
 }

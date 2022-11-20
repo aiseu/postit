@@ -35,3 +35,11 @@ ion-modal {
 ion-modal::part(backdrop) {
   background: transparent;
 }
+
+ion-popover {
+  --backdrop-opacity: 0;
+}
+
+ion-content {
+  --overflow: hidden;
+}

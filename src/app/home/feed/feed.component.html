@@ -1,10 +1,12 @@
-  <main>
-    <div class="content">
-      <div class="logo-feed">
+<main>
+  <div class="content">
+    <div class="logo-feed">
+      <div>
         <img src="../../../assets/icon/Logo Feed.png" alt="">
       </div>
-      <ng-container *ngFor="let postite of notePostite">
-          <app-postite-on-feed *ngIf="postite.isPublic" class="card" [data]="postite"></app-postite-on-feed>
-      </ng-container>
     </div>
-  </main>
+    <ng-container *ngFor="let postite of notePostite">
+      <app-postite-on-feed *ngIf="postite.isPublic" class="card" [data]="postite"></app-postite-on-feed>
+    </ng-container>
+  </div>
+</main>

@@ -1,8 +1,8 @@
 export interface UserProxy {
-  id: number;
+  id?: number;
   name: string;
   email: string;
   password: string;
   role?: string;
-  imageUrl: string;
+  imageUrl?: string;
 }

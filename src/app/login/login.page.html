@@ -5,8 +5,15 @@
     </div>
   </div>
 </header>
+
 <main>
-  <div class="forms-container">
-    <app-login-fields></app-login-fields>
+  <div class="forms-container" [ngClass]="{'animationLogin' : checker === false}" *ngIf="!checker; else registration">
+    <app-login-fields (openRegistration)="receiveEvent($event)"></app-login-fields>
   </div>
 </main>
+
+<ng-template #registration>
+  <div class="forms-container animationRegister">
+    <app-registration-fields (openLogin)="receiveEvent($event)"></app-registration-fields>
+  </div>
+</ng-template>

@@ -1,3 +1,7 @@
+.box {
+  background-image: url(../../../assets/img/grid.svg);
+}
+
 .logo {
   display: flex;
   flex-direction: column;
@@ -18,7 +22,6 @@ main {
   height: 30vh;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
   
   & > app-postite {
     position: absolute;
@@ -28,32 +31,32 @@ main {
   } 
   
   & > :nth-child(1) {
-    transform: rotate(320deg);
+    transform: rotate(332deg);
     transform-origin: bottom;
   }
 
   & > :nth-child(2) {
-    transform: rotate(330deg);
+    transform: rotate(342deg);
     transform-origin: bottom;
   }
 
   & > :nth-child(3) {
-    transform: rotate(340deg);
+    transform: rotate(352deg);
     transform-origin: bottom;
   }
 
   & > :nth-child(4) {
-    transform: rotate(350deg);
+    transform: rotate(2deg);
     transform-origin: bottom;
   }
 
   & > :nth-child(5) {
-    transform: rotate(0deg);
+    transform: rotate(12deg);
     transform-origin: bottom;
   }
 
   & > :nth-child(6) {
-    transform: rotate(20deg);
+    transform: rotate(22deg);
     transform-origin: bottom;
   }
 }
@@ -68,7 +71,18 @@ main {
   .card {
     &:nth-child(n + 3){
       margin-top: -10rem;
-      
     }
   }
 }
+
+ @media (min-width: 390px) and (max-width: 400px) {
+   .content{padding: 0 1rem;}
+ }
+
+ @media (max-width: 375px) {
+   .content{padding: 0 .5rem;}
+ }
+
+ @media (max-width: 360px) {
+   .content{padding: 0 0rem;}
+ }

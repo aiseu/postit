@@ -11,13 +11,22 @@ main {
   height: 20%;
 
   & input {
-    width: 80%;
+    width: 90%;
     height: 80%;
+    padding-left: 20px;
     font-size: 30px;
-
     background-color: inherit;
     border: none;
     outline: none;
+  }
+
+  & button {
+    background-color: transparent;
+
+    & > img {
+      width: 20px;
+      height: 20px;
+    }
   }
 }
 

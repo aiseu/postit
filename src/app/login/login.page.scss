@@ -1,15 +1,15 @@
 .container {
-  height: 40vh;
   width: 100vw;
+  height: 40vh;
 
   & > .background {
     width: 100%;
     height: 100%;
     
     & > img {
-     width: 100%;
-     height: 100%;
-     object-fit: cover;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
 }
@@ -19,4 +19,34 @@
     width: 100%;
     height: 70%;
     bottom: 0;
+}
+
+.animationRegister {
+  position: absolute;
+  width: 100%;
+  height: 95%;
+  bottom: 0;
+  animation-name: register;
+  animation-duration: 0.28s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes register{
+  0%   {height: 70%;}
+  100% {height: 95%;}
+  }
+
+.animationLogin {
+  position: absolute;
+  width: 100%;
+  height: 70%;
+  bottom: 0;
+  animation-name: login;
+  animation-duration: 0.28s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes login{
+0%   {height: 95%}
+100% {height: 70%;}
 }

@@ -1,0 +1,37 @@
+<form (ngSubmit)="register()" [formGroup]="formGroup">
+  <header>
+    <button><img src="../../../assets/icon/buttonBack.svg" alt="" (click)="goToLogin()"></button>
+    <div class="logo">
+      <img src="../../../assets/icon/LOGO.png" alt="">
+    </div>
+  </header>
+  <main>
+
+    <div class="input-name">
+      <label for="name">Nome completo*</label>
+      <input type="text" id="name" formControlName="name">
+    </div>
+    <div class="input-email">
+      <label for="email">E-mail*</label>
+      <input type="text" id="email" formControlName="email">
+    </div>
+    <div class="input-confirmed-email">
+      <label for="confirmed-email">Confirme o E-mail*</label>
+      <input type="text" id="confirmed-email" formControlName="confirmedEmail">
+    </div>
+    <div class="input-password">
+      <label for="password">Senha*</label>
+      <input type="password" id="password" formControlName="password">
+    </div>
+    <div class="input-confirmed-password">
+      <label for="confirmed-password">Confirma a Senha*</label>
+      <input type="password" id="confirmed-password" formControlName="confirmedPassword">
+    </div>
+  </main>
+
+  <footer>
+    <p>*Campos obrigatorios</p>
+    <p>Ao registrar-me concordo com os termos de uso a Politica de Privacidade do aplicativo</p>
+    <button class="create" type="submit" [disabled]="formGroup.invalid" [ngStyle]="{'opacity': formGroup.invalid === true ? '0.5' : '1'}">Criar Conta</button>
+  </footer>
+</form>

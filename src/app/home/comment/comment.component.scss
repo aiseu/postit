@@ -1,9 +1,21 @@
 .logo-feed {
   display: flex;
   justify-content: center;
+  position: relative;
   width: 100%;
   margin-top: 3em;
   margin-bottom: 2em;
+
+    & button {
+      position: absolute;
+      height: 30px;
+      top: 37px;
+      left: 25px;
+
+      background-image: url('/assets/icon/buttonBackComment.svg');
+      background-repeat: no-repeat;
+      background-color: transparent;
+  }
 
   & > img {
     width: 104px;
@@ -14,6 +26,7 @@
 main {
   width: 100vw;
   height: 100vh;
+  background-image: url(../../../assets/img/grid.svg);
 
   .content {
     overflow: auto;
@@ -25,10 +38,7 @@ main {
     align-items: center;
     
     .card {
-
-      &:nth-last-child(1) {
-        margin-bottom: 7em;
-      }
+      margin-bottom: 45px;
     }
   }
 }

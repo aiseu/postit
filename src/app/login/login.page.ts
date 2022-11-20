@@ -7,6 +7,11 @@ import { Component } from '@angular/core';
 })
 export class LoginPage {
 
+  checker:boolean;
+
   constructor() {}
 
+  receiveEvent(event){
+    this.checker = event
+  }
 }

@@ -1,0 +1,155 @@
+* {
+  font-size: 1em;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.box {
+  width: 90vw;
+  height: 40vh;
+  margin-bottom: 3em;
+}
+
+header {
+  width: 100%;
+  height: 20%;
+
+  .upside {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    .user-img {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 16%;
+      height: 100%;
+      flex-shrink: 0;
+
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+        }
+    }
+
+    .user-info {
+      width: 58%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+      margin-left: 13px;
+      overflow: hidden;
+
+        h2 {
+          margin: 0;
+          padding: 0;
+          color: #595a50;
+          font-style: italic;
+        }
+
+        h3 {
+          margin: 0;
+          padding: 0;
+          color: #858763;
+          font-size: 10px;
+        }
+
+    }
+
+    .button {
+      width: 26%;
+      height: 100%;
+      padding-right: 10px;
+      display: flex;
+      justify-content: flex-end;
+
+        button {
+          font-size: 12px;
+          font-weight: 700;
+          color: #54544f;
+          background-color: inherit;
+        }
+    }
+  }
+}
+
+main {
+  width: 100%;
+  height: 60%;
+
+  .title {
+    width: 100%;
+    height: 10%;
+    padding-left: 20px;
+    margin-bottom: 30px;
+
+    h1 {
+      width: 100%;
+      margin: 0;
+      color: #54544f;
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .title{margin-bottom: 40px;}
+  }
+
+  .content {
+    height: 80%;
+    width: 100%;
+    padding: 0 20px;
+    margin: 0;
+    overflow: hidden;
+    color: #50504e;
+  }
+}
+
+footer {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: space-around;
+
+  .comment-input {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .input-form {
+      display: flex;
+      justify-content: space-around;
+      width: 90%;
+      height: 40%;
+      border: solid 1px #57574f;
+      border-radius: 10px;
+
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      padding-right: 0;
+      border: none;
+      border-radius: 10px;
+      background-color: inherit;
+      outline: none;
+      font-size: 13px;
+    }
+    
+    button {
+      height: 100%;
+      font-size: 13px;
+      border-radius: 10px;
+      padding-right: 18px;
+      background-color: inherit;
+      color: #818262;
+    }
+  }
+}

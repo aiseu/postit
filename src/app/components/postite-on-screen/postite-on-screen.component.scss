@@ -8,10 +8,12 @@ ion-card-title {
   display: flex;
   justify-content: center;
   font-size: 16px;
+  text-overflow: ellipsis;
 }
 
 ion-card-content {
   display: flex;
   justify-content: center;
   font-size: 10px;
+  word-break: break-all;
 }

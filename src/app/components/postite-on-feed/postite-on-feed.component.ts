@@ -1,4 +1,4 @@
-import { NoteCommentProxy } from './../../models/proxy/note-comment.proxy';
+import { NoteProxy } from './../../models/proxy/note.proxy';
 import { Router } from '@angular/router';
 import { Component, Input, OnInit } from '@angular/core';
 
@@ -9,7 +9,9 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class PostiteOnFeedComponent implements OnInit {
 
-  @Input() data: NoteCommentProxy;
+  @Input() data: NoteProxy;
+
+  like: boolean = false;
 
   constructor(private route: Router) {}
 
@@ -17,5 +19,9 @@ export class PostiteOnFeedComponent implements OnInit {
 
   goToComment(){
     this.route.navigate([`home/comment/${this.data.id}`]);
+  }
+
+  enjoy(){
+    this.like = !this.like
   }
 }

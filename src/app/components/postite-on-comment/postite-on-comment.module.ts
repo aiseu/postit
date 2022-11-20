@@ -2,6 +2,7 @@ import { CommentInPostiteModule } from './../comment-in-postite/comment-in-posti
 import { PostiteOnCommentComponent } from './postite-on-comment.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -11,7 +12,8 @@ import { CommonModule } from '@angular/common';
   ],
   imports: [
     CommonModule,
-    CommentInPostiteModule
+    CommentInPostiteModule,
+    FormsModule
   ],
   exports: [
     PostiteOnCommentComponent,

@@ -1,6 +1,23 @@
-<router-outlet></router-outlet> 
+<router-outlet id="main"></router-outlet> 
   <div class="box">
     <div class="navbar">
       <app-navbar></app-navbar>
     </div>
   </div>
+
+  <ion-menu side="end" type="push" menuId="first" contentId="main">
+      <ion-toolbar>
+        <ion-title>Ajustes</ion-title>
+      </ion-toolbar>
+    <ion-content>
+      <ion-list lines="none">
+        <ion-item>Ajustes</ion-item>
+        <ion-item>Ajustes</ion-item>
+        <ion-item>Ajustes</ion-item>
+        <ion-item (click)="disconnect()">Sair</ion-item>
+      </ion-list>
+    </ion-content>
+      <div class="logoMenu">
+       <img src="../../assets/icon/LOGO.png" alt="">
+     </div>
+  </ion-menu>

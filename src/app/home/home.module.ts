@@ -1,3 +1,4 @@
+import { ProfileModule } from './profile/profile.module';
 import { CommentModule } from './comment/comment.module';
 import { FeedModule } from './feed/feed.module';
 import { NavbarModule } from './../components/navbar/navbar.module';
@@ -21,9 +22,10 @@ import { HomeComponent } from './home.component';
     HomeRoutingModule,
     CommentModule,
     NavbarModule,
+    ProfileModule
   ],
   declarations: [
-   HomeComponent,
+   HomeComponent
   ]
 })
 export class HomeModule { }
